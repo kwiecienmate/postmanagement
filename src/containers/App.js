@@ -1,21 +1,61 @@
 import React, {Component} from 'react';
-import logo from '../logo.svg';
-import '../styles/containers/App.css';
+import '../styles/index.css';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import SearchBox from "../components/SearchBox";
+import PostItem from "../components/PostItem";
 
 class App extends Component {
+
+    static apiUrl = 'http://jsonplaceholder.typicode.com/';
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            posts: []
+        };
+        this.allPosts = [];
+    }
+
+    componentDidMount = () => {
+        fetch(
+            App.apiUrl + 'posts',
+        ).then((response) => response.json()).then((data) => {
+            this.allPosts = data;
+            this.setState({
+                posts: this.allPosts
+            });
+        }).catch((err) => {
+            console.error(err);
+        });
+    };
+
+    onSubmit = (value) => {
+        const filteredPosts = this.allPosts.filter((post) => {
+            return post.body.indexOf(value) > -1 || post.title.indexOf(value) > -1;
+        });
+
+        this.setState({
+            posts: filteredPosts
+        });
+    };
+
     render() {
         return (
             <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h2>Welcome to React</h2>
-                </div>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
+                <Header title="Wow wow"/>
+                <SearchBox onSubmit={(value) => {this.onSubmit(value)}}/>
+                <button className="add-post-button">Add post</button>
+                {this.state.posts.map((post) => {
+                    return (
+                        <PostItem key={post.id} post={post}/>
+                    )
+                })}
+                <Footer/>
             </div>
         );
     }
+
 }
 
 export default App;

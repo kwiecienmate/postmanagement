@@ -1,0 +1,28 @@
+
+
+.PostItem {
+  width: 80%;
+  border: 1px solid;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+
+  .post-title {
+    font-size: 30px;
+  }
+
+  .post-item-content {
+    flex-grow: 5;
+  }
+
+  .post-item-buttons {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    .post-item-button {
+      flex-grow: 1;
+    }
+  }
+}

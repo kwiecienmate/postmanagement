@@ -19,4 +19,5 @@ yarn-error.log*
 # Webstorm files
 /.idea
 
-
+# compiled sass files
+src/**/*.css

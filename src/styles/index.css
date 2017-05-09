@@ -1,5 +1,93 @@
+.App {
+  height: 100%; }
+
+.App .add-post-button {
+  position: absolute;
+  top: 18%;
+  right: 10%; }
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white; }
+
+.App-intro {
+  font-size: large; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.Footer {
+  margin-top: 20px;
+  bottom: 0;
+  text-align: center;
+  width: 100%; }
+
+.Header {
+  width: 90%;
+  height: 10%;
+  background-color: gray;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 50px;
+  min-height: 100px; }
+
+.Header .header-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+
+.Header .header-logo {
+  height: 99px;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translate(0, -50%); }
+
+.SearchBox {
+  position: relative;
+  margin-top: 20px;
+  left: 10%; }
+
+.SearchBox .searchbox-input {
+  font-size: 30px; }
+
+.PostItem {
+  width: 80%;
+  border: 1px solid;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row; }
+
+.PostItem .post-title {
+  font-size: 30px; }
+
+.PostItem .post-item-content {
+  flex-grow: 5; }
+
+.PostItem .post-item-buttons {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column; }
+
+.PostItem .post-item-buttons .post-item-button {
+  flex-grow: 1; }
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+html, body, #root {
+  height: 100%; }
