@@ -44,8 +44,10 @@ class App extends Component {
         return (
             <div className="App">
                 <Header title="Wow wow"/>
-                <SearchBox onSubmit={(value) => {this.onSubmit(value)}}/>
-                <button className="add-post-button">Add post</button>
+                <div className="top-bar">
+                    <SearchBox onSubmit={(value) => {this.onSubmit(value)}}/>
+                    <button className="add-post-button">Add post</button>
+                </div>
                 {this.state.posts.map((post) => {
                     return (
                         <PostItem key={post.id} post={post}/>
